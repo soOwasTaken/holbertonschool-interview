@@ -4,12 +4,12 @@ min_operation.py
 """
 
 def minOperations(n):
-	a = 1
-	b = 0
-	while a < n:
-		if n % a == 0:
-			b += a
-			a += a
-		else:
-			a += 1
-	return b
+	"""
+	Calculates the fewest number of operations needed to result in exactly n H characters in the file.
+	"""
+	if n <= 1:
+		return 0
+	else:
+		for i in range(2, n + 1):
+			if n % i == 0:
+				return minOperations(int(n / i)) + i
