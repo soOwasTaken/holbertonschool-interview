@@ -29,9 +29,10 @@ static void print_grid(int grid[3][3])
  */
 int is_stable(int grid[3][3])
 {
-    for (int i = 0; i < 3; i++)
+    int i, j;
+    for (i = 0; i < 3; i++)
     {
-        for (int j = 0; j < 3; j++)
+        for (j = 0; j < 3; j++)
         {
             if (grid[i][j] > 3)
                 return 0;
@@ -50,7 +51,7 @@ void sandpiles_sum(int grid1[3][3], int grid2[3][3])
 {
     int i, j;
 
-    // Add corresponding elements of grid1 and grid2
+    /* Add corresponding elements of grid1 and grid2 */
     for (i = 0; i < 3; i++)
     {
         for (j = 0; j < 3; j++)
@@ -59,20 +60,25 @@ void sandpiles_sum(int grid1[3][3], int grid2[3][3])
         }
     }
 
-    while (1) {
-        if (!is_stable(grid1)) {
-            // Print current state of grid1 only if it's unstable
+    while (1) 
+    {
+        if (!is_stable(grid1)) 
+        {
+            /* Print current state of grid1 only if it's unstable */
             printf("=\n");
             print_grid(grid1);
 
-            // Topple each cell in grid1
-            for (i = 0; i < 3; i++) {
-                for (j = 0; j < 3; j++) {
-                    if (grid1[i][j] > 3) {
-                        // Topple the current cell
+            /* Topple each cell in grid1 */
+            for (i = 0; i < 3; i++) 
+            {
+                for (j = 0; j < 3; j++) 
+                {
+                    if (grid1[i][j] > 3) 
+                    {
+                        /* Topple the current cell */
                         grid1[i][j] -= 4;
 
-                        // Distribute grains to neighboring cells
+                        /* Distribute grains to neighboring cells */
                         if (i > 0)
                             grid1[i - 1][j]++;
                         if (i < 2)
@@ -84,8 +90,10 @@ void sandpiles_sum(int grid1[3][3], int grid2[3][3])
                     }
                 }
             }
-        } else {
-            // Exit the loop if the sandpile is stable
+        } 
+        else 
+        {
+            /* Exit the loop if the sandpile is stable */
             break;
         }
     }
