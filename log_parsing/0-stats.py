@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""testing boxes all by one to see if they can be unlocked"""
+"""stats.py - reads stdin line by line and computes metrics"""
 import sys
 from collections import defaultdict
 
@@ -14,10 +14,11 @@ try:
         if len(parts) >= 7:
             ip_address = parts[0]
             status_code = parts[-2]
-            file_size = int(parts[-1])
+            file_size_str = parts[-1]
 
             if status_code.isdigit():
                 status_code = int(status_code)
+                file_size = int(file_size_str)
 
                 total_size += file_size
                 status_counts[status_code] += 1
