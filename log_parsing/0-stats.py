@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-"""stats.py - reads stdin line by line and computes metrics"""
 import sys
 from collections import defaultdict
+"""stats.py - reads stdin line by line and computes metrics"""
 
 total_size = 0
 status_counts = defaultdict(int)
