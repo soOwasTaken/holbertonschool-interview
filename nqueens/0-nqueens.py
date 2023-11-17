@@ -4,10 +4,12 @@ N Queens Problem
 """
 import sys
 
+
 def print_solutions(solutions):
     """ Prints the solutions in the required format """
     for solution in solutions:
         print(solution)
+
 
 def is_safe(board, row, col, n):
     """ Check if it's safe to place a queen at board[row][col] """
@@ -25,6 +27,7 @@ def is_safe(board, row, col, n):
 
     return True
 
+
 def solve_n_queens(board, col, n, solutions):
     """ Solves the N Queens problem using backtracking """
     if col >= n:
@@ -38,12 +41,14 @@ def solve_n_queens(board, col, n, solutions):
 
             board[i][col] = 0
 
+
 def n_queens(n):
     """ Main function to solve N Queens Problem """
     board = [[0] * n for _ in range(n)]
     solutions = []
     solve_n_queens(board, 0, n, solutions)
     return solutions
+
 
 def main():
     if len(sys.argv) != 2:
@@ -62,6 +67,7 @@ def main():
 
     solutions = n_queens(N)
     print_solutions(solutions)
+
 
 if __name__ == "__main__":
     main()
