@@ -84,5 +84,5 @@ void free_avl(avl_t **tree)
     free_avl(&(*tree)->right);
 
     free(*tree);
-    *tree = NULL;  // Set the pointer to NULL to avoid accessing freed memory
+    *tree = NULL;
 }
