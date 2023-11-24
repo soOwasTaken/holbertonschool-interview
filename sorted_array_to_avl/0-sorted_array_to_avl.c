@@ -11,18 +11,18 @@
  */
 avl_t *sorted_array_to_avl(int *array, size_t size)
 {
-    avl_t *tree = NULL;
+	avl_t *tree = NULL;
 
-    if (array == NULL || size < 1)
-        return (NULL);
+	if (array == NULL || size < 1)
+		return (NULL);
 
-    if (add_node_avl(array, size, &tree, 1) == -1)
-    {
-        free_avl(&tree);
-        return (NULL);
-    }
+	if (add_node_avl(array, size, &tree, 1) == -1)
+	{
+		free_avl(&tree);
+		return (NULL);
+	}
 
-    return (tree);
+	return (tree);
 }
 
 /**
@@ -37,36 +37,36 @@ avl_t *sorted_array_to_avl(int *array, size_t size)
  */
 int add_node_avl(int *array, size_t size, avl_t **tree, int add_left)
 {
-    size_t halfway = (size - 1) / 2;
-    avl_t *new_node = NULL;
+	size_t halfway = (size - 1) / 2;
+	avl_t *new_node = NULL;
 
-    if (array == NULL || size < 1)
-        return (0);
+	if (array == NULL || size < 1)
+		return (0);
 
-    new_node = malloc(sizeof(avl_t));
-    if (new_node == NULL)
-        return (-1);
+	new_node = malloc(sizeof(avl_t));
+	if (new_node == NULL)
+		return (-1);
 
-    new_node->n = array[halfway];
-    new_node->parent = (*tree);
-    new_node->left = NULL;
-    new_node->right = NULL;
+	new_node->n = array[halfway];
+	new_node->parent = (*tree);
+	new_node->left = NULL;
+	new_node->right = NULL;
 
-    if ((*tree) == NULL)
-        (*tree) = new_node;
-    else if (add_left)
-        (*tree)->left = new_node;
-    else
-        (*tree)->right = new_node;
+	if ((*tree) == NULL)
+		(*tree) = new_node;
+	else if (add_left)
+		(*tree)->left = new_node;
+	else
+		(*tree)->right = new_node;
 
-    if (add_node_avl(array, halfway, &new_node, 1) == -1)
-        return (-1);
+	if (add_node_avl(array, halfway, &new_node, 1) == -1)
+		return (-1);
 
-    halfway++;
-    if (add_node_avl(&array[halfway], size - halfway, &new_node, 0) == -1)
-        return (-1);
+	halfway++;
+	if (add_node_avl(&array[halfway], size - halfway, &new_node, 0) == -1)
+		return (-1);
 
-    return (0);
+	return (0);
 }
 
 /**
@@ -77,12 +77,12 @@ int add_node_avl(int *array, size_t size, avl_t **tree, int add_left)
  */
 void free_avl(avl_t **tree)
 {
-    if (tree == NULL || *tree == NULL)
-        return;
+	if (tree == NULL || *tree == NULL)
+		return;
 
-    free_avl(&(*tree)->left);
-    free_avl(&(*tree)->right);
+	free_avl(&(*tree)->left);
+	free_avl(&(*tree)->right);
 
-    free(*tree);
-    *tree = NULL;
+	free(*tree);
+	*tree = NULL;
 }
