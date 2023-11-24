@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 /**
- * sorted_array_to_avl - builds an AVL tree from a sorted array without rotation
+ * sorted_array_to_avl - builds an AVL tree from a sorted array w/ rotation
  *
  * @array: pointer to the first element of the array to be converted
  * @size: number of elements in the array
