@@ -40,7 +40,7 @@ void heapify(int *array, size_t size, int i, size_t total_size)
 }
 
 /**
- * heap_sort - Sorts an array of integers in ascending order using the Heap sort algorithm
+ * heap_sort - algorithm
  * @array: The array to be sorted
  * @size: Number of elements in @array
  */
