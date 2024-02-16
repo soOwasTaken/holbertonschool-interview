@@ -12,20 +12,20 @@ listint_t *find_listint_loop(listint_t *head)
 
 	while (hare != NULL && hare->next != NULL)
 	{
-		tortoise = tortoise->next;      // Moves one step
-		hare = hare->next->next;        // Moves two steps
+		tortoise = tortoise->next;
+		hare = hare->next->next;
 
 		if (tortoise == hare)
 		{
-			tortoise = head;            // Reset tortoise to the beginning
-			while (tortoise != hare)    // Find the start of the loop
+			tortoise = head;
+			while (tortoise != hare)
 			{
 				tortoise = tortoise->next;
 				hare = hare->next;
 			}
-			return tortoise;            // Return the start of the loop
+			return tortoise;
 		}
 	}
 
-	return NULL; // No loop found
+	return NULL;
 }
