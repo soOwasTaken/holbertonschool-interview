@@ -47,10 +47,12 @@ void merge(int *array, int left, int middle, int right, int *temp)
  **/
 void merge_sort_recursive(int *array, int left, int right, int *temp)
 {
+	int middle;
+
 	if (right - left <= 1)
 		return;
 
-	int middle = left + (right - left) / 2;
+	middle = left + (right - left) / 2;
 
 	merge_sort_recursive(array, left, middle, temp);
 	merge_sort_recursive(array, middle, right, temp);
@@ -65,10 +67,12 @@ void merge_sort_recursive(int *array, int left, int right, int *temp)
  **/
 void merge_sort(int *array, size_t size)
 {
+	int *temp;
+
 	if (size < 2)
 		return;
 
-	int *temp = malloc(size * sizeof(int));
+	temp = malloc(size * sizeof(int));
 	if (!temp)
 		return;
 
