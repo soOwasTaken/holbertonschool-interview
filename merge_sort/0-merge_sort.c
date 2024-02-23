@@ -39,27 +39,40 @@ void merge(int *array, int left, int middle, int right, int *temp)
 }
 
 /**
+ * merge_sort_recursive - Recursively sorts an array of integers using Merge Sort
+ * @array: The array to be sorted
+ * @left: Index of the leftmost element
+ * @right: Index of the rightmost element
+ * @temp: Temporary array for merging
+ **/
+void merge_sort_recursive(int *array, int left, int right, int *temp)
+{
+	if (right - left <= 1)
+		return;
+
+	int middle = left + (right - left) / 2;
+
+	merge_sort_recursive(array, left, middle, temp);
+	merge_sort_recursive(array, middle, right, temp);
+
+	merge(array, left, middle, right, temp);
+}
+
+/**
  * merge_sort - Sorts an array of integers in ascending order using Merge Sort
  * @array: The array to be sorted
  * @size: Number of elements in @array
  **/
 void merge_sort(int *array, size_t size)
 {
-	size_t mid;
-	int *temp;
-
 	if (size < 2)
 		return;
 
-	temp = malloc(size * sizeof(int));
+	int *temp = malloc(size * sizeof(int));
 	if (!temp)
 		return;
 
-	mid = size / 2;
-	merge_sort(array, mid);
-	merge_sort(array + mid, size - mid);
-
-	merge(array, 0, mid, size, temp);
+	merge_sort_recursive(array, 0, size, temp);
 
 	free(temp);
 }
