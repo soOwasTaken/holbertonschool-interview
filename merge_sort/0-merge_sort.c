@@ -51,13 +51,13 @@ void merge_sort(int *array, size_t size)
 	if (size < 2)
 		return;
 
-	mid = size / 2;
-	merge_sort(array, mid);
-	merge_sort(array + mid, size - mid);
-
 	temp = malloc(size * sizeof(int));
 	if (!temp)
 		return;
+
+	mid = size / 2;
+	merge_sort(array, mid);
+	merge_sort(array + mid, size - mid);
 
 	merge(array, 0, mid, size, temp);
 
