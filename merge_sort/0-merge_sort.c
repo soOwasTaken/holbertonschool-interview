@@ -39,7 +39,7 @@ void merge(int *array, int left, int middle, int right, int *temp)
 }
 
 /**
- * merge_sort_recursive - Recursively sorts an array of integers using Merge Sort
+ * merge_sort_recursive - recurs. sort an array of integers using Merge Sort
  * @array: The array to be sorted
  * @left: Index of the leftmost element
  * @right: Index of the rightmost element
