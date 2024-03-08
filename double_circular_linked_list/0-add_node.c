@@ -5,11 +5,11 @@
 /**
  * print_list - Print informations about each element of a list
  *
- * @list: A pointer to the head of the linkd list
-
+ * @list: A pointer to the head of the linkd List
+ * @str: string to input.
  *
  * Return: void
-
+ *
  */
 
 List *add_node_end(List **list, char *str)
@@ -48,7 +48,7 @@ List *add_node_end(List **list, char *str)
 
 /**
  * add_node_begin - Add a new node to the beginning of a double clk
-
+ *
  * @list: Pointer to the head of the linked list
  * @str: The string to copy into the new node
  *
