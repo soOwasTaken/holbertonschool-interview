@@ -1,7 +1,4 @@
-#include "stddef.h"
-#include "stdlib.h"
-#include "list.h"
-#include "string.h"
+
 
 /**
  * print_list - Print informations about each element of a list
@@ -81,9 +78,9 @@ List *add_node_begin(List **list, char *str)
 
     new_node->prev = last;
 
-    *list = new_node;
+	*list = new_node;
 
 
-    return (new_node);
+	return (new_node);
 }
 
