@@ -1,4 +1,6 @@
-
+#include <stdlib.h>
+#include <string.h>
+#include "list.h"
 
 /**
  * print_list - Print informations about each element of a list
