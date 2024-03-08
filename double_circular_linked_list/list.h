@@ -11,10 +11,11 @@
  * Description: doubly linked list node structure
  * for Holberton project
  */
-typedef struct List {
-    char *str;
-    struct List *prev;
-    struct List *next;
+typedef struct List
+{
+		char *str;
+		struct List *prev;
+		struct List *next;
 } List;
 
 List *add_node_end(List **list, char *str);
