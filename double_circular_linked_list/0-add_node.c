@@ -51,12 +51,8 @@ List *add_node_end(List **list, char *str)
  *
  * Return: Address of the new node, or NULL on failure
  */
-List *add_node_begin(List **list, char *str)
-{
-
+List *add_node_begin(List **list, char *str) {
     List *new_node = malloc(sizeof(List));
-    List *last = *list;
-
     if (!new_node)
         return (NULL);
 
@@ -66,23 +62,21 @@ List *add_node_begin(List **list, char *str)
         return (NULL);
     }
 
-    new_node->prev = NULL;
-
     if (*list == NULL) {
+        // Correctly initialize new_node for an empty list
         new_node->next = new_node;
+        new_node->prev = new_node;
+        *list = new_node;
     } else {
-        while (last->next != *list)
-            last = last->next;
-        last->next = new_node;
+        // Insert new_node at the beginning of a non-empty list
         new_node->next = *list;
+        new_node->prev = (*list)->prev;
+        (*list)->prev->next = new_node;
         (*list)->prev = new_node;
+        *list = new_node;
+
     }
 
-    new_node->prev = last;
-
-	*list = new_node;
-
-
-	return (new_node);
+    return (new_node);
 }
 
