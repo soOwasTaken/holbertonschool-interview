@@ -63,12 +63,10 @@ List *add_node_begin(List **list, char *str) {
     }
 
     if (*list == NULL) {
-        // Correctly initialize new_node for an empty list
         new_node->next = new_node;
         new_node->prev = new_node;
         *list = new_node;
     } else {
-        // Insert new_node at the beginning of a non-empty list
         new_node->next = *list;
         new_node->prev = (*list)->prev;
         (*list)->prev->next = new_node;
