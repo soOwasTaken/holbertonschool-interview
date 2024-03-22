@@ -3,8 +3,8 @@
     island_perimeter
 """
 def island_perimeter(grid):
-""" island_perimeter """
-rows = len(grid)
+    """ island_perimeter """
+    rows = len(grid)
     cols = len(grid[0]) if rows else 0
     perimeter = 0
 
