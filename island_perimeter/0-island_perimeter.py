@@ -1,3 +1,7 @@
+#!/usr/bin/python3
+"""
+    island_perimeter
+"""
 def island_perimeter(grid):
     rows = len(grid)
     cols = len(grid[0]) if rows else 0
