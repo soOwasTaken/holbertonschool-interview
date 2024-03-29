@@ -47,6 +47,7 @@ int binary_tree_is_bst(const binary_tree_t *tree)
 
 /**
  * binary_tree_height - Measures the height of a binary tree
+ * @tree : pointer to root node of tree
  *
  * Return: Height of tree, 0 if NULL
  */
