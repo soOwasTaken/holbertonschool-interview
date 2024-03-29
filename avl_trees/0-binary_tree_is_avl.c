@@ -4,12 +4,10 @@
 
 /**
  * bst_h - Checks if valid BST
-
  * @tree: Pointer to root node being checked
  * @min: Int min
  * @max: Int max
  *
-
  * Return: 1 if valid BST, 0 if not
  */
 int bst_h(const binary_tree_t *tree, int min, int max)
@@ -24,12 +22,10 @@ int bst_h(const binary_tree_t *tree, int min, int max)
 }
 
 /**
-
  * bst - Checks if valid BST
  * @tree: Pointer to root node of tree to check
  *
  * Return: 1 if valid BST, 0 if not
-
  */
 int bst(const binary_tree_t *tree)
 {
@@ -41,7 +37,6 @@ int bst(const binary_tree_t *tree)
 /**
  * binary_tree_is_bst - Checks if a binary tree is a valid BST
  * @tree: Pointer to root node of tree to check
-
  *
  * Return: 1 if valid BST, 0 if not or NULL
  */
@@ -51,10 +46,7 @@ int binary_tree_is_bst(const binary_tree_t *tree)
 }
 
 /**
-
  * binary_tree_height - Measures the height of a binary tree
-
- * @tree: Pointer to the root node of the tree to measure the height
  *
  * Return: Height of tree, 0 if NULL
  */
@@ -75,11 +67,9 @@ size_t binary_tree_height(const binary_tree_t *tree)
 
 /**
  * binary_tree_is_avl - Determine if binary tree is an AVL or not
-
  * @tree: Pointer to root node of binary tree
  *
  * Return: 1 if tree is an AVL, 0 if not
-
  */
 int binary_tree_is_avl(const binary_tree_t *tree)
 {
@@ -113,4 +103,5 @@ int binary_tree_is_avl(const binary_tree_t *tree)
 	else
 		return (binary_tree_is_avl(tree->left) && binary_tree_is_avl(tree->right));
 }
+
 
